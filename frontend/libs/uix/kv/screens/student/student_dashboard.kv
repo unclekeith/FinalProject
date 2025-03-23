@@ -1,0 +1,202 @@
+<StudentDashboardScreen>
+    md_bg_color: app.theme_cls.backgroundColor
+
+    MDTopAppBar:
+        id: topbar
+        type: "small"
+        pos_hint: {'top': 1}
+
+        MDTopAppBarTitle:
+            id: first_name
+            text: f'{root.first_name} {root.last_name}'
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        spacing: dp(2)
+        pos_hint: {"top": .95}
+        padding: 0, 0, 0, dp(120)
+
+        MDBoxLayout:
+            orientation: 'vertical'
+            pos_hint: {"center_x": .5}
+
+            MDBoxLayout:
+                orientation: 'horizontal'
+                spacing: dp(24)
+                size_hint_x: .9
+                pos_hint: {"center_x": .5}
+                spacing: dp(75)
+
+
+                MyCard:
+                    md_bg_color: '#4CAF50'
+                    card_text: "Profile"
+                    card_icon: "account-outline"
+                    on_release: root.manager.push("student_profile")
+
+                MyCard:
+                    md_bg_color: '#333333'
+                    card_text: "Apply"
+                    card_icon: "account-edit-outline"
+                    on_release: root.manager.push("apply")
+
+        MDBoxLayout:
+            orientation: 'vertical'
+            pos_hint: {"center_x": .5}
+            padding: 0, 0, 0,dp(40)
+
+
+            MDBoxLayout:
+                orientation: 'horizontal'
+                spacing: dp(24)
+                size_hint_x: .9
+                pos_hint: {"center_x": .5}
+                spacing: dp(75)
+
+
+                MyCard:
+                    md_bg_color: '#2196F3'
+                    card_text: "Messages"
+                    card_icon: "message-outline"
+                    on_release: root.manager.push("student_message")
+                    MDBadge:
+                        text:""
+
+                MyCard:
+                    md_bg_color: (.8, .3, .8, 5)
+                    card_text: "Certificate"
+                    card_icon: "invoice-outline"
+                    on_release: root.manager.push("proof")
+
+
+        MDBoxLayout:
+            orientation: 'vertical'
+            pos_hint: {"center_x": .5}
+            padding: 0, 0, 0,dp(80)
+
+
+            MDBoxLayout:
+                orientation: 'horizontal'
+                spacing: dp(24)
+                size_hint_x: .9
+                pos_hint: {"center_x": .5}
+                spacing: dp(75)
+
+                MyCard:
+                    md_bg_color: [.9, .2, .2, 1]
+                    card_text: "Calender"
+                    card_icon: "calendar-outline"
+                    on_release: root.manager.push("calendar_display")
+
+                MyCard:
+                    id: student_subjects
+                    md_bg_color: [.1, .2, .9, 7]
+                    card_text: "My Subjects"
+                    card_icon: "book"
+                    on_release: root.manager.push("my_subjects")
+
+
+
+        MDBoxLayout:
+            orientation: 'vertical'
+            pos_hint: {"center_x": .5}
+            padding: 0, 0, 0,dp(110)
+
+            MDBoxLayout:
+                orientation: 'horizontal'
+                spacing: dp(24)
+                size_hint_x: .9
+                pos_hint: {"center_x": .5}
+                spacing: dp(75)
+
+                MyCard:
+                    id: studentid
+                    md_bg_color: '#7A288A'
+                    card_text: "School ID"
+                    card_icon: "card-account-details-star-outline"
+                    on_release: root.manager.push("student_id")            
+
+                MyCard:
+                    id: profilepicture
+                    md_bg_color: '#FF9800'
+                    card_text: "profile picture"
+                    card_icon: "camera"
+
+                    on_release: root.manager.push("student_camera")
+
+    MDBoxLayout:
+        id: four
+        orientation: 'horizontal'
+        size_hint_x: .9
+        spacing: dp(5)
+        pos_hint: { 'center_x': .5,"bottom": 1}
+        adaptive_height: True
+
+        BottomButton:
+            card_text: "[size=12.5sp]School Gallery[/size]"
+            card_icon: "qrcode-scan"
+            on_release: root.manager.push("gallery")
+
+        BottomButton:
+            card_text: "[size=12.5sp]Assignments[/size]"
+            card_icon: "wallet-outline"
+            on_release: root.manager.push("homework_list")
+
+        BottomButton:
+            card_text: "[size=12.5sp]Change Password[/size]"
+            card_icon: "key-outline"
+            on_release: root.manager.push("reset")
+
+        BottomButton:
+            card_text: "[size=12.5sp]Logout[/size]"
+            card_icon: "power"
+            on_release: root.log_out()
+
+<MyCard@MDCard>:
+    orientation: 'horizontal'
+    theme_bg_color: "Custom"
+    md_bg_color: app.theme_cls.primaryColor
+    radius: dp(16)
+    padding: dp(8)
+    size_hint: None, None
+    size: dp(130), dp(60)
+    card_text: "Change ME!"
+    card_icon: "account"
+
+    MDLabel:
+        id: text
+        pos_hint: {"top": 1}
+        markup: True
+        text: root.card_text
+        color: 1,1,1,1
+
+    MDIcon:
+        id: icon
+        pos_hint: {"center_y": .5}
+        icon: root.card_icon
+        theme_font_size: "Custom"
+        font_size: sp(24)
+        color: 1,1,1,1
+
+<BottomButton@MDCard>:
+    height: dp(50)
+    orientation: 'vertical'
+    pos_hint: {"top": 1}
+    # theme_bg_color: "Custom"
+    # md_bg_color: "gold"
+    radius: dp(8)
+    size_hint_y: None
+    height: dp(90)
+    card_text: "Change ME!"
+    card_icon: "account"
+
+    MDIcon:
+        pos_hint: {"center_x": .5}
+        icon: root.card_icon
+
+    MDLabel:
+        pos_hint: {"center_x": .5}
+        markup: True
+        halign: 'center'
+        text: root.card_text
+        # color: 1,1,1,1

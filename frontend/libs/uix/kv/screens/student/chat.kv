@@ -1,0 +1,48 @@
+<StudentChatScreen>
+    # opacity: 0  # Initially hidden
+    md_bg_color: app.theme_cls.backgroundColor
+    MDTopAppBar:
+        id: appbar
+        type: "small"
+        size_hint_x: .99
+        pos_hint: {"top": 1}
+        MDTopAppBarLeadingButtonContainer:
+
+            MDActionTopAppBarButton:
+                icon: "arrow-left"
+                on_release: root.manager.back()
+
+            MDListItemLeadingAvatar:
+                source: "data/images/account.png"
+                pos_hint: {"center_y": .4}
+
+
+            MDTopAppBarTitle:
+                markup: True
+                theme_font_size: 'Custom'
+                font_size: 23
+                text: "ADMIN"
+
+
+    MDScrollView:
+        pos_hint: {'top': .9}
+        size_hint_y: None
+        height: root.height - appbar.height - phansi.height - dp(15)
+        MDList:
+            id:message_container
+            spacing: dp(5)
+            padding: dp(10), 0,0,0
+
+    MDBoxLayout:
+        id: phansi
+        orientation: 'horizontal'
+        style: "outlined"
+        pos_hint: { "bottom": 1}
+        adaptive_height: True
+        padding: dp(0),0,dp(10),dp(50)
+
+        MDLabel:
+            halign: 'center'
+            text: "only admins can send messages"
+            bold: True
+            markup: True

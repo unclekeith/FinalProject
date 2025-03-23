@@ -1,0 +1,218 @@
+{
+    "welcome": {
+        "module": "libs.uix.baseclass.screens.auth.welcome",
+        "class": "WelcomeScreen",
+        "kv": "libs/uix/kv/screens/auth/welcome.kv"
+    },
+    "login": {
+        "module": "libs.uix.baseclass.screens.auth.login",
+        "class": "LoginScreen",
+        "kv": "libs/uix/kv/screens/auth/login.kv"
+    },
+    "register": {
+        "module": "libs.uix.baseclass.screens.auth.register",
+        "class": "RegisterScreen",
+        "kv": "libs/uix/kv/screens/auth/register.kv"
+    },
+    "reset": {
+        "module": "libs.uix.baseclass.screens.auth.password_reset",
+        "class": "ResetPasswordScreen",
+        "kv": "libs/uix/kv/screens/auth/password_reset.kv"
+    },
+    "inactive": {
+        "module": "libs.uix.baseclass.screens.auth.inactive",
+        "class": "DeactivatedAccountScreen",
+        "kv": "libs/uix/kv/screens/auth/inactive.kv"
+    },
+    "calendar": {
+        "module": "libs.uix.baseclass.screens.calendar.calendar",
+        "class": "CalendarScreen",
+        "kv": "libs/uix/kv/screens/calendar/calendar.kv"
+    },
+    "calender": {
+        "module": "libs.uix.baseclass.screens.calendar.cal",
+        "class": "Calender",
+        "kv": "libs/uix/kv/screens/calendar/cal.kv"
+    },
+    "admin_dashboard": {
+        "module": "libs.uix.baseclass.screens.admin.dashboard",
+        "class": "AdminDashboard",
+        "kv": "libs/uix/kv/screens/admin/dashboard.kv"
+    },
+    "admin_chat": {
+        "module": "libs.uix.baseclass.screens.admin.chat",
+        "class": "AdminChatScreen",
+        "kv": "libs/uix/kv/screens/admin/chat.kv"
+    },
+    "users": {
+        "module": "libs.uix.baseclass.screens.admin.users",
+        "class": "UsersScreen",
+        "kv": "libs/uix/kv/screens/admin/users.kv"
+
+    },"staff_accounts": {
+        "module": "libs.uix.baseclass.screens.admin.staff",
+        "class": "StaffScreen",
+        "kv": "libs/uix/kv/screens/admin/staff.kv"
+    },
+    "account_details2":{
+        "module": "libs.uix.baseclass.screens.admin.account_details2",
+        "class": "AccountDetailsScreen2",
+        "kv": "libs/uix/kv/screens/admin/account_details2.kv"
+    },
+    "account_details": {
+        "module": "libs.uix.baseclass.screens.admin.account_details",
+        "class": "AccountDetailsScreen",
+        "kv": "libs/uix/kv/screens/admin/account_details.kv"
+    },
+
+    "applications": {
+        "module": "libs.uix.baseclass.screens.admin.applications",
+        "class": "ApplicationsScreen",
+        "kv": "libs/uix/kv/screens/admin/applications.kv"
+    },
+    "application_details": {
+        "module": "libs.uix.baseclass.screens.admin.application_details",
+        "class": "ApplicationDetailsScreen",
+        "kv": "libs/uix/kv/screens/admin/application_details.kv"
+    },
+    "student_dashboard": {
+        "module": "libs.uix.baseclass.screens.student.student_dashboard",
+        "class": "StudentDashboardScreen",
+        "kv": "libs/uix/kv/screens/student/student_dashboard.kv"
+    },
+    "student_profile": {
+        "module": "libs.uix.baseclass.screens.student.profile",
+        "class": "StudentProfileScreen",
+        "kv": "libs/uix/kv/screens/student/profile.kv"
+    },
+    "student_update": {
+        "module": "libs.uix.baseclass.screens.student.student_profile_update",
+        "class": "ProfileUpdateScreen",
+        "kv": "libs/uix/kv/screens/student/student_profile_update.kv"
+    },
+    "apply": {
+        "module": "libs.uix.baseclass.screens.student.apply",
+        "class": "ApplyScreen",
+        "kv": "libs/uix/kv/screens/student/apply.kv"
+    },
+    "student_message": {
+        "module": "libs.uix.baseclass.screens.student.message",
+        "class": "StudentMessageScreen",
+        "kv": "libs/uix/kv/screens/student/message.kv"
+    },
+    "student_chat": {
+        "module": "libs.uix.baseclass.screens.student.chat",
+        "class": "StudentChatScreen",
+        "kv": "libs/uix/kv/screens/student/chat.kv"
+    },
+    "student_id": {
+        "module": "libs.uix.baseclass.screens.student.id",
+        "class": "StudentId",
+        "kv": "libs/uix/kv/screens/student/id.kv"
+    },
+    "student_camera": {
+        "module": "libs.uix.baseclass.screens.student.camera",
+        "class": "CameraScreen",
+        "kv": "libs/uix/kv/screens/student/camera.kv"
+    },
+    "add_subjects": {
+        "module": "libs.uix.baseclass.screens.student.add_subjects",
+        "class": "AddSubjectsScreen",
+        "kv": "libs/uix/kv/screens/student/add_subjects.kv"
+    },
+    "my_subjects": {
+        "module": "libs.uix.baseclass.screens.student.my_subjects",
+        "class": "MySubjectsScreen",
+        "kv": "libs/uix/kv/screens/student/my_subjects.kv"
+    },
+    "approval_for_ALevel": {
+        "module": "libs.uix.baseclass.screens.student.accepted_for_ALevel",
+        "class": "AcceptedScreen",
+        "kv": "libs/uix/kv/screens/student/accepted_for_ALevel.kv"
+    },
+    "camera": {
+        "module": "libs.uix.baseclass.screens.camera.camera",
+        "class": "CameraScreen",
+        "kv": "libs/uix/kv/screens/camera/camera.kv"
+    },
+    "rejected_message": {
+        "module": "libs.uix.baseclass.screens.student.rejected_message",
+        "class": "MyScreen",
+        "kv": "libs/uix/kv/screens/student/rejected_message.kv"
+    },"progress": {
+        "module": "libs.uix.baseclass.screens.student.progress_bar",
+        "class": "Progress",
+        "kv": "libs/uix/kv/screens/student/progress_bar.kv"
+    },
+    "setting": {
+        "module": "libs.uix.baseclass.screen.ssetting.student.setting",
+        "class": "AdminHomeScreen",
+        "kv": "libs/uix/kv/screens/student/setting/setting.kv"
+    },
+    "proof": {
+        "module": "libs.uix.baseclass.screens.student.proof",
+        "class": "PictureSelectScreen",
+        "kv": "libs/uix/kv/screens/student/proof.kv"
+    },
+    
+    "teacher_dashboard": {
+        "module": "libs.uix.baseclass.screens.teacher.teacher_dashboard",
+        "class": "TeacherScreen",
+        "kv": "libs/uix/kv/screens/teacher/teacher_dashboard.kv"
+    },
+    "checking_in_out": {
+        "module": "libs.uix.baseclass.screens.teacher.checking_in_out",
+        "class": "CheckingScreen",
+        "kv": "libs/uix/kv/screens/teacher/checking_in_out.kv"
+    },
+    "teachers_profile": {
+        "module": "libs.uix.baseclass.screens.teacher.profile",
+        "class": "ProfileScreen",
+        "kv": "libs/uix/kv/screens/teacher/profile.kv"
+    },
+    "teachers_profile_update": {
+        "module": "libs.uix.baseclass.screens.teacher.profile_update",
+        "class": "ProfileUpdateScreen",
+        "kv": "libs/uix/kv/screens/teacher/profile_update.kv"
+    },
+    "teachers_send_homework":{
+        "module": "libs.uix.baseclass.screens.teacher.send_homework",
+        "class": "SendHomework",
+        "kv": "libs/uix/kv/screens/teacher/send_homework.kv"
+    },
+    "teachers_homework_list": {
+        "module": "libs.uix.baseclass.screens.teacher.homework_list",
+        "class": "HomeworkListScreen",
+        "kv": "libs/uix/kv/screens/teacher/homework_list.kv"
+    },
+    "homework_list": {
+        "module": "libs.uix.baseclass.screens.student.homework",
+        "class": "HomeworkScreen",
+        "kv": "libs/uix/kv/screens/student/homework.kv"
+    },
+    "teachers_messages": {
+        "module": "libs.uix.baseclass.screens.teacher.messages",
+        "class": "TeacherChatScreen",
+        "kv": "libs/uix/kv/screens/teacher/messages.kv"
+    },
+    "calendar_display": {
+        "module": "libs.uix.baseclass.screens.calendar.calendar_display",
+        "class": "CalendarDisplayScreen",
+        "kv": "libs/uix/kv/screens/calendar/calendar_display.kv"
+    },
+    "gallery": {
+        "module": "libs.uix.baseclass.screens.gallery.gallery",
+        "class": "GalleryScreen",
+        "kv": "libs/uix/kv/screens/gallery/gallery.kv"
+    },
+    "teachers_presents": {
+        "module": "libs.uix.baseclass.screens.admin.teachers_presents",
+        "class": "Teachers_PresentsScreen",
+        "kv": "libs/uix/kv/screens/admin/teachers_presents.kv"
+    },
+    "replying_teachers_messages": {
+        "module": "libs.uix.baseclass.screens.admin.replying_teachers_messages",
+        "class": "Replying_Teachers_MessagesScreen",
+        "kv": "libs/uix/kv/screens/admin/replying_teachers_messages.kv"
+    }
+}

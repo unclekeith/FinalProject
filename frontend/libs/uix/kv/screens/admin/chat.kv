@@ -1,0 +1,81 @@
+<AdminChatScreen>
+    md_bg_color: app.theme_cls.backgroundColor
+
+    MDTopAppBar:
+        id: appbar
+        type: "small"
+        size_hint_x: .99
+        pos_hint: {"top": 1}
+
+        MDTopAppBarLeadingButtonContainer:
+
+            MDActionTopAppBarButton:
+                icon: "arrow-left"
+                on_release: root.manager.back()
+
+        MDTopAppBarTitle:
+            text: "Admin"
+
+    MDLabel:
+        text: "Sending messages to all student accounts !!"
+        pos_hint: {"center_x": .6, "center_y":.9}
+        # halign: 'Center'
+
+    MDScrollView:
+        pos_hint: {'top': .88}
+        size_hint_y: None
+        height: root.height - appbar.height - phansi.height - dp(15)
+        MDList:
+            id:message_container
+            spacing: dp(5)
+            padding: dp(10), 0,0,0
+
+    MDBoxLayout:
+        id: phansi
+        orientation: 'horizontal'
+        style: "outlined"
+        pos_hint: { "bottom": 1}
+        adaptive_height: True
+        padding: dp(10),0,dp(10),dp(30)
+
+        MDTextField:
+            id: message
+            size_hint_x: .8
+            on_text_validate:root.send_message(message=message.text)
+            radius: dp(25)
+            padding: dp(15),0,0,0
+
+        MDIconButton:
+            id:button
+            on_release: root.send_message(message=message.text)
+            icon: "send"
+            style: "standard"
+            radius: dp(50)
+
+#         TooltipMDIconButton:
+#             text: "Tooltip button"
+#             pos_hint: {"center_x": .5, "center_y": .5}
+
+
+
+# <YourTooltipClass>
+#     MDTooltipRich:
+#         id: tooltip
+#         auto_dismiss: False
+
+#         MDTooltipRichSubhead:
+#             text: "Add others"
+
+#         MDTooltipRichSupportingText:
+#             text:
+#                 "reflect tax witholdings."
+
+#         MDTooltipRichActionButton:
+#             on_press: tooltip.dismiss()
+
+#             MDButtonText:
+#                 text: "Learn more"
+
+# <TooltipMDIconButton>
+#     MDButtonText:
+#         text: root.text

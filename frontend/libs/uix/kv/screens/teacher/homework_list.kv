@@ -1,0 +1,26 @@
+<HomeworkListScreen>
+    md_bg_color: app.theme_cls.backgroundColor
+
+
+    MDTopAppBar:
+        type: "small"
+        size_hint_x: .99
+        pos_hint: {"top": 1}
+
+        MDTopAppBarLeadingButtonContainer:
+
+            MDActionTopAppBarButton:
+                icon: "arrow-left"
+                on_release: 
+                    root.manager.push_replacement("teacher_dashboard")
+
+
+        MDTopAppBarTitle:
+            text: "Assignments"
+
+    MDScrollView:
+        pos_hint: { "top": .95}
+
+        MDList:
+            id: posts
+            spacing: 10

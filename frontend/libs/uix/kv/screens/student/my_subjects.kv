@@ -1,0 +1,42 @@
+<MySubjectsScreen>
+    md_bg_color: app.theme_cls.backgroundColor
+
+    MDTopAppBar:
+        id: appbar
+        size_hint_x: .99
+        pos_hint: {"top": 1}
+        MDTopAppBarLeadingButtonContainer:
+
+            MDActionTopAppBarButton:
+                icon: "arrow-left"
+                on_release: root.manager.back()
+
+            MDTopAppBarTitle:
+                text: "My Subjects"
+
+    MDScrollView:
+        pos_hint: {'top': 0.9}
+        size_hint_y: None
+        height: root.height - (appbar.height * 2.5)
+        MDList:
+            pos_hint: {'center_x': 0.5,'top': 0.9}
+            spacing: dp(5)
+            id: subjects
+
+    MDButton:
+        id: finish_up
+        pos_hint: {'center_x': 0.2,'top': 0.1}
+        on_release: root.finish_up()
+        radius: dp(0)
+
+        MDButtonText:
+            text: "Finish_Up"
+    MDButton:
+        id: add_subjects
+        pos_hint: {'center_x': 0.7,'top': 0.1}
+        on_release: root.manager.push("add_subjects")
+        radius: dp(0)
+
+        MDButtonText:
+            text: "Add Subjects"
+

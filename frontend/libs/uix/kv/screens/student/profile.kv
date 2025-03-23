@@ -1,0 +1,119 @@
+# MDScreen:
+<StudentProfileScreen>
+    md_bg_color: app.theme_cls.backgroundColor
+
+    # Improved User Info Layout
+    MDBoxLayout:
+        orientation: 'horizontal'
+        padding: dp(6), dp(16), dp(12), dp(0)  # Added vertical padding
+        adaptive_height: True
+        pos_hint: {"top": 1}
+        # adaptive_width: True
+
+        MDSmartTile:
+            size_hint: None, None
+            size: "80dp", "80dp"
+            overlap: False
+            spacing: 20
+
+            MDSmartTileImage:
+                id: profile_image  # Reference the ObjectProperty in Python code
+                source: "data/images/account.png"  # Default image if no profile picture is found
+                radius: [dp(60)]
+
+        MDBoxLayout:
+            orientation: 'horizontal'
+            padding: dp(10), 0, 0, dp(35)
+            adaptive_height: True
+            spacing: 20
+
+            MDLabel:
+                bold: True
+                size_hint_x: .45
+                text: f'{root.first_name} {root.last_name}'
+                font_size: 22  # Increased font size for better visibility
+
+    MDBoxLayout:
+        pos_hint: {'center_y': .25}
+        orientation: 'vertical'
+        padding: dp(16)
+        size_hint_y: None
+        elevation: 4
+        radius: [0, 0,dp(12), dp(12)]
+
+        MDBoxLayout:
+            orientation: 'vertical'
+            spacing: dp(35)
+            MDDivider
+            Detail:
+                label_text: '[b]Date of Birth:[/b]'
+                value_text: f'{root.date_of_birth}'
+
+            MDDivider
+
+            Detail:
+                label_text: '[b]ID Number:[/b]'
+                value_text: f'{root.id_number}'
+
+
+            MDDivider
+
+            Detail:
+                label_text: '[b]gender:[/b]'
+                value_text: f'{root.gender}'
+
+
+            MDDivider
+
+            Detail:
+                label_text: '[b]Previous School:[/b]'
+                value_text: f'{root.previous_school}'
+
+
+            MDDivider
+
+            Detail:
+                label_text: '[b]Academic Level Application:[/b]'
+                value_text: f'{root.academic_level}'
+
+            MDDivider
+
+            Detail:
+                label_text: '[b]Next of Kin:[/b]'
+                value_text: f'{root.next_of_kin}'
+
+
+            MDDivider
+
+            Detail:
+                label_text: '[b]Number of Passed Subjects:[/b]'
+                value_text: f'{root.number_of_passed_subjects}'
+
+
+# Improved Button Layout
+    MDButton:
+        on_release: root.manager.push_replacement("student_update")
+        pos_hint: {'center_x': 0.5, "center_y": .1}
+        radius: dp(5)  # Added radius for rounded corners
+
+        MDButtonText:
+            text: "Update profile"
+
+        MDButtonIcon:
+            icon: 'update'
+
+<Detail@MDBoxLayout>:
+    orientation: 'horizontal'
+    spacing: dp(60)
+    label_text: "change me"
+    value_text: "change me"
+
+    MDLabel:
+        markup: True
+        text: root.label_text
+        size_hint_x: None
+        width: dp(150)
+
+    MDLabel:
+        markup: True
+        text: root.value_text

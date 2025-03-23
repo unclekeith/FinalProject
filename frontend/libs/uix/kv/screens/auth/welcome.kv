@@ -1,0 +1,73 @@
+<WelcomeScreen>
+    md_bg_color: app.theme_cls.backgroundColor
+
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        MDBoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: .2
+
+            MDLabel:
+                id:status_label
+                markup: True
+                theme_text_color: 'Custom'
+                text_color: "#FF0000"
+                text: ''
+                halign: 'center'
+                valign: 'center'
+                theme_font_size: 'Custom'
+                font_size: 80
+                pos_hint: {'center_x': 0.5}
+
+
+        MDBoxLayout:
+            orientation: 'vertical'
+
+            pos_hint: {"center_y": .6}
+            size_hint: None,None
+            size_hint_x: .99
+            size_hint_y: .9
+            padding: dp(0)
+            
+
+            FitImage:
+                size_hint_x: None
+                width: root.width
+                # height: 200
+                source: "data/images/final.png"
+
+
+        MDBoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: .3
+            padding: dp(60), dp(40), dp(50),0
+            spacing: dp(40)
+
+
+            MDButton:
+                id: two
+                on_release: root.manager.push("register")
+                pos_hint: {'center_x': 0.3,'top': 1}
+                radius: dp(5)
+            
+                MDButtonText:
+                    text: "Sign Up"
+
+                MDButtonIcon:
+                    icon: 'chevron-double-left'
+
+            MDButton:
+                id: one
+                on_release: root.manager.push("login")
+                pos_hint: {'center_x': 0.7,'top': 1}
+                radius: dp(5)
+
+                MDButtonText:
+                    text: "Sign In"
+
+                MDButtonIcon:
+                    icon: 'chevron-double-right'
+
+
+        

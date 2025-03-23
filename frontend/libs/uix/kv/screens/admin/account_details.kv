@@ -1,0 +1,161 @@
+<AccountDetailsScreen>:
+    md_bg_color: app.theme_cls.backgroundColor
+
+    MDTopAppBar:
+        id: top_app_bar
+        type: "small"
+        pos_hint: {"top": 1}
+
+        MDTopAppBarLeadingButtonContainer:
+            MDActionTopAppBarButton:
+                on_release: root.manager.back()
+                icon: "arrow-left"
+
+        MDTopAppBarTitle:
+            markup: True
+            valign: 'middle'
+            halign: 'center'
+            text: f'[color=#008080][size=22sp][b]Account Full Details[/color][/b][/size]'
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        pos_hint: {"top": 1}
+        spacing: dp(10)
+
+        MDBoxLayout:
+            pos_hint: {'top': 1}
+            orientation: 'vertical'
+            padding: dp(16)
+            size_hint_y: None
+            height: root.height - button_container.height - top_app_bar.height
+            md_bg_color: "white"
+            elevation: 4
+
+            MDBoxLayout:
+                orientation: 'vertical'
+                spacing: dp(10)
+                id: clear
+
+                Detail:
+                    label_text: '[b]First Name:[/b]'
+                    value_text: root.first_name
+
+                MDDivider
+
+                Detail:
+                    label_text: '[b]Last Name:[/b]'
+                    value_text: root.last_name
+
+                MDDivider
+
+                Detail:
+                    label_text: '[b]Email:[/b]'
+                    value_text: root.email
+
+                MDDivider
+
+                Detail:
+                    label_text: '[b]Role:[/b]'
+                    value_text: root.role
+
+                MDDivider
+
+                Detail:
+                    label_text: '[b]Phone Number:[/b]'
+                    value_text: root.phone_number
+
+                MDDivider
+
+                Detail:
+                    label_text: '[b]ID Number:[/b]'
+                    value_text: root.id_number
+
+                MDDivider
+
+                Detail:
+                    label_text: '[b]Gender:[/b]'
+                    value_text: root.gender
+
+                MDDivider
+
+                Detail:
+                    label_text: '[b]Date of Birth:[/b]'
+                    value_text: root.date_of_birth
+
+                MDDivider
+
+                Detail:
+                    label_text: '[b]Created At:[/b]'
+                    value_text: root.created_at
+
+                MDDivider
+
+                Detail:
+                    label_text: '[b]Next of Kin:[/b]'
+                    value_text: root.next_of_kin
+
+                MDDivider
+
+                Detail:
+                    label_text: '[b]Level:[/b]'
+                    value_text: root.level
+
+                MDDivider
+
+                Detail:
+                    label_text: '[b]Is Deleted:[/b]'
+                    value_text: root.is_deleted
+
+                MDDivider
+
+                Detail:
+                    label_text: '[b]Is Active:[/b]'
+                    value_text: root.is_active
+
+                MDDivider
+
+                Detail:
+                    label_text: '[b]Number of Passed Subjects:[/b]'
+                    value_text: root.number_of_passed_subjects
+
+        MDBoxLayout:
+            id: button_container
+            spacing: dp(60)
+            padding: 0,0,0,dp(20)
+            size_hint_y: None
+            height: dp(60)
+            pos_hint: {'bottom': 1, 'center_x': .5}
+            adaptive_width: True
+
+            MDButton:
+                radius: dp(8)
+                on_release: root.deactivate_reactivate()
+                MDButtonText:
+                    text: 'De-Activate' if root.is_active else 'Activate'
+
+                MDButtonIcon:
+                    icon: 'power'
+
+            MDButton:
+                radius: dp(8)
+                MDButtonText:
+                    text: 'Delete '
+
+                MDButtonIcon:
+                    icon: 'trash-can'
+
+<Detail@MDBoxLayout>:
+    orientation: 'horizontal'
+    spacing: dp(52)
+    label_text: "change me"
+    value_text: "change me"
+
+    MDLabel:
+        markup: True
+        text: root.label_text
+        size_hint_x: None
+        width: dp(150)
+
+    MDLabel:
+        markup: True
+        text: root.value_text

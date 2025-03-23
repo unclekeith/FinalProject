@@ -1,0 +1,32 @@
+<PictureSelectScreen>:
+    md_bg_color: app.theme_cls.backgroundColor
+    BoxLayout:
+        orientation: 'vertical'
+        padding: dp(10)
+        spacing: dp(10)
+        
+        # BoxLayout to hold the selected image
+        MDBoxLayout:
+            id: image_container
+            orientation: 'vertical'
+            size_hint_y: None
+            height: self.minimum_height
+
+    MDButton:
+        id: choose_button
+        pos_hint: {'center_x': 0.4,'center_y': 0.2}
+        on_release: root.file_manager_open()
+        radius: dp(0)
+
+        MDButtonText:
+            text: "Select a Picture"
+
+    MDFabButton:
+        id: send_fab
+        pos_hint: {'center_x': 0.85, "center_y": .2}
+        icon: "send"
+        style: "small"
+        disabled: True
+        on_release: root.upload_selected_image()
+        on_release: root.manager.push("student_dashboard")
+

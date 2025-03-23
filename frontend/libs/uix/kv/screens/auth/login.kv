@@ -1,0 +1,103 @@
+<LoginScreen>
+    md_bg_color: app.theme_cls.backgroundColor
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        pos_hint: {'center_x': 0.5,'top':.93}
+        size_hint: None, None
+        height: dp(180)
+        width: dp(320)
+
+        FitImage:
+            source: "data/images/final.png"
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        pos_hint: {'center_x': 0.5,'center_y': 0.44}
+        size_hint: .9, .5
+        spacing: dp(7)
+        padding: 0,0,0,dp(60)
+
+        MDBoxLayout:
+            orientation: 'vertical'
+            spacing: dp(10)
+            size_hint_x: .9
+            pos_hint: {'center_x': 0.5, "center_y": 0.99}
+            padding: 0,0,0,dp(15)
+
+            MDTextField:
+                id: username
+                allow_copy: True
+                radius: dp(9)
+                on_text_validate: password.focus = True
+
+                MDTextFieldHintText:
+                    text: "Email / Username"
+
+
+            MDTextField:
+                id: password
+                pos_hint: {'center_x': 0.5}
+                allow_copy: False
+                radius: dp(9)
+                password: True
+                on_text_validate: root.login_user(username=username.text, password=password.text)
+                # on_text_validate: root.manager.push("student_dashboard")
+
+                MDTextFieldHintText:
+                    text: "Password"
+
+                MDTextFieldTrailingIcon:
+                    icon: 'eye'
+
+        MDBoxLayout:
+            orientation: 'horizontal'
+            adaptive_height: True
+            size_hint_x: .9
+            pos_hint: {'center_x': 0.5, "top": 1}
+            padding: dp(0), 0, 0, dp(8)
+
+            MDCheckbox:
+                id: remember_me
+
+            MDLabel:
+                text: "Remember me"
+
+            MDLabel:
+                markup: True
+                text: "[b][color=#008080][ref=]Forgot password?[/ref][/color][/b]"
+                on_ref_press: root.manager.push("reset")
+
+        MDButton:
+            on_release: root.login_user(username=username.text, password=password.text)
+            # on_release: root.manager.push("student_dashboard")
+            pos_hint: {'center_x': 0.5}
+            radius: dp(0)
+
+            MDButtonText:
+                text: "Login"
+
+            MDButtonIcon:
+                icon: 'gesture-tap-box'
+
+        MDLabel:
+            markup: True
+            pos_hint: {'center_x': 0.5}
+            halign: 'center'
+            adaptive_height: True
+            text: "Do not have an account? [b][color=#008080][ref=]Sign up[/ref][/color][/b]"
+            on_ref_press: root.manager.push("register")
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        pos_hint: {'center_x': 0.5,'center_y': 0.1}
+        adaptive_height: True
+
+        MDLabel:
+            id: error_label
+            theme_text_color: 'Custom'
+            text_color: "#ff1010"
+            text: ""
+            markup: True
+            adaptive_height: True
+            halign: 'center'

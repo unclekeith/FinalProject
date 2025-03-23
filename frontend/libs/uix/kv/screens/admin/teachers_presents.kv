@@ -1,0 +1,30 @@
+<Teachers_PresentsScreen>
+
+    md_bg_color: app.theme_cls.backgroundColor
+
+    MDTopAppBar:
+        id: appbar
+        type: "small"
+        pos_hint: {'top': 1}
+
+        MDTopAppBarLeadingButtonContainer:
+
+
+            MDActionTopAppBarButton:
+                on_release: root.manager.back()
+                icon: "arrow-left"
+
+
+        MDTopAppBarTitle:
+            markup: True
+            valign: 'middle'
+            halign: 'center'
+            text: f'[color=#008080][size=22sp][b]Staff Accounts [/color][/b][/size]'
+
+    MDScrollView:
+        pos_hint: {'top': 0.9}
+        size_hint_y: None
+        height: root.height - appbar.height - dp(20)
+        MDList:
+            id: user_list
+            spacing: 5

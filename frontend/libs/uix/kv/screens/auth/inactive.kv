@@ -1,0 +1,14 @@
+<DeactivatedAccountScreen>
+    md_bg_color: root.theme_cls.backgroundColor
+
+    MDLabel:
+        text: 'Your Account was [color=#800000][b]Deactived[/b][/color]\n for violation of our [color=#008080][b][ref="https://embakweaziwe.onrender.com/terms"]Terms[/ref][/b][/color] of service.\n\nPlease Whatsapp the admin at [color=#008080][b]+263717794958[/b][/color]'
+        halign: 'center'
+        markup: True
+        on_ref_press: print("Move to the terms and conditions screen")
+
+    MDButton:
+        on_release: root.call_admin()
+        pos_hint: {'center_x': 0.5,'center_y': 0.2}
+        MDButtonText:
+            text: "Call Admin"

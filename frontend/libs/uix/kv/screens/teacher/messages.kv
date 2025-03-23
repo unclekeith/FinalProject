@@ -1,0 +1,58 @@
+<TeacherChatScreen>:
+    # md_bg_color: app.theme_cls.background_color
+    md_bg_color: app.theme_cls.backgroundColor
+
+
+    MDTopAppBar:
+        type: "small"
+        size_hint_x: .99
+        pos_hint: {"top": 1}
+        MDTopAppBarLeadingButtonContainer:
+            MDActionTopAppBarButton:
+                icon: "arrow-left"
+                on_release: root.manager.back()
+        MDTopAppBarTitle:
+            text: "Admin"
+
+
+    MDBoxLayout:
+        orientation: 'horizontal'
+        pos_hint: {"top": .95}
+
+        
+
+        MDBoxLayout:
+            orientation: 'vertical'
+            MDScrollView:
+                MDList:
+                    id: message_container  # Container for sent messages
+                    spacing: dp(45)
+                    padding: dp(10), dp(40), 0, 0
+
+        MDBoxLayout:
+            orientation: 'vertical'
+            MDScrollView:
+                MDList:
+                    id: messages_container  # Container for received messages
+                    spacing: dp(45)
+                    padding: dp(10), dp(80), 0, 0
+        
+    MDBoxLayout:
+        orientation: 'horizontal'
+        style: "outlined"
+        pos_hint: { "bottom": 1 }
+        adaptive_height: True
+        padding: dp(10), 0, dp(10), dp(30)
+
+        MDTextField:
+            id: message
+            size_hint_x: .8
+            on_text_validate: root.send_message(message.text)
+            radius: dp(25)
+            padding: dp(15), 0, 0, 0
+
+        MDIconButton:
+            id: button
+            on_release: root.send_message(message.text)
+            icon: "send"
+            radius: dp(50)

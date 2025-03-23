@@ -1,0 +1,113 @@
+<StudentId>
+    md_bg_color: app.theme_cls.backgroundColor
+    MDBoxLayout:
+        orientation: 'horizontal'
+        pos_hint: {"top": .94}
+        size_hint_y: None
+        height: dp(50)
+        padding: dp(5), dp(5), 0, dp(5)
+        spacing: 13
+
+        MDFabButton:
+            id: full
+            style: "small"
+            icon: 'arrow-left'
+            on_release:
+                root.manager.push("student_dashboard")
+    MDLabel:
+        pos_hint: {"center_x": .5, "center_y": .9}
+        id:status_label
+        markup: True
+        theme_text_color: 'Custom'
+        text_color: "#FF0000"
+        text: ''
+        halign: 'center'
+        valign: 'center'
+        theme_font_size: 'Custom'
+        font_size: 80
+
+
+    MDCard:
+        orientation: 'vertical'
+        style: "elevated"
+        pos_hint: {"center_x": .5, "center_y": .7}
+        padding: "4dp"
+        size_hint: None, None
+        size: "360dp", "180dp"
+
+
+        MDBoxLayout:
+            orientation: 'horizontal'
+            padding: dp(6), dp(30), dp(12), dp(20)  
+            spacing: dp(20)
+
+            MDLabel:
+                bold: True
+                size_hint_x: .7
+                text: "EMBAKWE HIGH SCHOOL"
+
+            MDBoxLayout:
+                padding: dp(6), dp(0), dp(10), dp(10)  
+                orientation: 'horizontal'
+                adaptive_height: True
+                spacing: 10
+
+                MDLabel:
+                    bold: True
+                    # size_hint_x: .2
+                    size_hint_y: .4
+                    text: "Signature"
+
+                MDDivider
+
+        MDBoxLayout:
+            orientation: 'horizontal'
+            padding: dp(6), dp(16), dp(12), dp(0)  # Added vertical padding
+            adaptive_height: True
+            pos_hint: {"top": 1}
+
+            MDSmartTile:
+                size_hint: None, None
+                size: "90dp", "90dp"
+                overlap: False
+                spacing: 20
+
+                MDSmartTileImage:
+                    id: profile_image  # Reference the ObjectProperty in Python code
+                    source: "data/images/account.png"  # Default image if no profile picture is found
+                    radius: [dp(60)]
+
+            MDBoxLayout:
+                orientation: 'horizontal'
+                padding: dp(25), 0, 0, dp(50)
+                adaptive_height: True
+                spacing: 20
+                MDLabel:
+                    bold: True
+                    size_hint_x: .45
+                    text: "Name: " f'{root.first_name} {root.last_name}\n'"Gender: " f'{root.gender}\n'"Date of birth: " f'{root.date_of_birth}'
+                    size_hint_x: .4
+
+
+    # MDCard:
+    #     size_hint: None, None
+    #     size: "280dp", "300dp"
+    #     pos_hint: {"center_x": 0.5}
+    #     orientation: "vertical"
+        
+    #     BoxLayout:
+    #         AsyncImage:
+    #             id: profile_image
+    #             source: "default_image.png"  # Default image before fetching
+    #             size_hint: None, None
+    #             size: "150dp", "150dp"
+    #             pos_hint: {"center_x": 0.5}
+    #             allow_stretch: True
+    #             keep_ratio: False
+
+    #     MDLabel:
+    #         text: "Profile Picture"
+    #         theme_text_color: "Secondary"
+    #         size_hint_y: None
+    #         height: "40dp"
+    #         halign: "center"

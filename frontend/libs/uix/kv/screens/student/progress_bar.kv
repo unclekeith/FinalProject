@@ -1,0 +1,79 @@
+<Progress>:
+    # md_bg_color: app.theme_cls.background_color
+    md_bg_color: app.theme_cls.backgroundColor
+
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        spacing: 15
+
+        MDLabel:
+            markup: True
+            text: f'[color=#008080][size=22sp][b]Welcome to your Account Information[/color][/b][/size]'
+            theme_text_color: "Primary"
+            halign: "center"
+            size_hint_y: None
+            height: "60dp"
+
+        MDCard:
+            orientation: 'vertical'
+            padding: "20dp"
+            size_hint: None, None
+            size: "280dp", "250dp"
+            pos_hint: {"center_x": 0.5}
+
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: 10
+                MDLabel:
+                    id: dorm_label
+                    text: "Dormitory: Loading..."
+                    theme_text_color: "Secondary"
+                    size_hint_y: None
+                    height: "48dp"
+                    halign: "center"
+                MDLabel:
+                    id: house_label
+                    text: "Athletic House: Loading..."
+                    theme_text_color: "Secondary"
+                    size_hint_y: None
+                    height: "48dp"
+                    halign: "center"
+                MDLabel:
+                    id: class_label
+                    text: "Class: Loading..."
+                    theme_text_color: "Secondary"
+                    size_hint_y: None
+                    height: "48dp"
+                    halign: "center"
+
+        MDCard:
+            orientation: 'vertical'
+            padding: "20dp"
+            size_hint: None, None
+            size: "300dp", "290dp"
+            pos_hint: {"center_x": 0.5}
+
+            BoxLayout:
+                orientation: 'vertical'
+                MDLabel:
+                    id: subjects_label
+                    text: "Subjects Assigned:\nLoading..."
+                    theme_text_color: "Secondary"
+                    size_hint_y: None
+                    height: "240dp"
+                    halign: "center"
+
+        
+
+
+
+        MDButton:
+            id: finish_up
+            pos_hint: {'center_x': 0.5,'top': 0.1}
+            on_release: root.finish_up()
+            radius: dp(0)
+
+            MDButtonText:
+                text: "Finish_Up"

@@ -1,0 +1,43 @@
+from enum import Enum
+
+
+class Grades(Enum):
+    X = "X"
+    A = "A"
+    B = "B"
+    C = "C"
+    D = "D"
+    E = "E"
+    F = "F"
+    U = "U"
+    ONE = "1"
+    TWO = "2"
+    THREE = "3"
+    FOUR = "4"
+    FIVE = "5"
+    SIX = "6"
+    SEVEN = "7"
+    EIGHT = "8"
+    NINE = "9"
+
+
+class SubjectNames(Enum):
+    MATHS = "MATHS"
+    ENGLISH = "ENGLISH"
+    HISTORY = "HISTORY"
+    GEOGRAPHY = "GEOGRAPHY"
+    NDEBELE = "NDEBELE"
+    SHONA = "SHONA"
+    PHYSICS = "PHYSICS"
+    BIOLOGY = "BIOLOGY"
+    ACCOUNTS = "ACCOUNTS"
+    COMMERCE = "COMMERCE"
+    COMPUTER_SCIENCE = "COMPUTER_SCIENCE"
+    WOOD_WORK = "WOOD_WORK"
+    ECONOMICS = "ECONOMICS"
+    BUSINESS_STUDIES = "BUSINESS_STUDIES"
+    AGRICULTURE = "AGRICULTURE"
+    COMBINED_SCIENCE = "COMBINED_SCIENCE"
+    CHEMISTRY = "CHEMISTRY"
+    HERITAGE = "HERITAGE"
+    PE = "PE"

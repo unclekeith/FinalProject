@@ -1,0 +1,78 @@
+<RegisterScreen>
+    md_bg_color: app.theme_cls.backgroundColor
+    
+    MDBoxLayout:
+        orientation: 'vertical'
+        pos_hint: {'center_x': 0.5,'top':1}
+        size_hint: None, None
+        height: dp(180)
+        width: dp(320)
+
+        FitImage:
+            source: "data/images/final.png"
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        spacing: dp(8)
+        size_hint_x: .9
+        pos_hint: {'center_x': 0.5, "center_y": 0.6}
+        padding: 0,0,0, dp(90)
+
+        MDTextField:
+            id: first_name
+            allow_copy: True
+            radius: dp(9)
+            on_text_validate: last_name.focus=True
+
+            MDTextFieldHintText:
+                text: "First Name"
+
+        MDTextField:
+            id: last_name
+            allow_copy: True
+            radius: dp(9)
+            on_text_validate: email.focus=True
+
+            MDTextFieldHintText:
+                text: "Last Name"
+
+        MDTextField:
+            id: email
+            allow_copy: True
+            radius: dp(9)
+            on_text_validate: phone_number.focus=True
+
+            MDTextFieldHintText:
+                text: "Email"
+
+        MDTextField:
+            id: phone_number
+            radius: dp(9)
+            on_text_validate: password.focus=True
+
+            MDTextFieldHintText:
+                text: "Phone Number"
+
+        MDTextField:
+            id: password
+            allow_copy: False
+            radius: dp(9)
+            password: True
+            on_text_validate: root.register_user(first_name=first_name.text, last_name=last_name.text, email=email.text, phone_number=phone_number.text, password=password.text)
+
+            MDTextFieldHintText:
+                text: "Password"
+
+        MDButton:
+            id: login
+            on_release: root.register_user(first_name=first_name.text, last_name=last_name.text, email=email.text, phone_number=phone_number.text, password=password.text)
+            pos_hint: {'center_x': 0.5}
+            radius: dp(5)
+
+            MDButtonText:
+                text: "Register"
+
+            MDButtonIcon:
+                icon: 'login'
+
+        

@@ -1,0 +1,25 @@
+<Replying_Teachers_MessagesScreen>:
+    md_bg_color: app.theme_cls.backgroundColor
+    MDTopAppBar:
+        id: appbar
+        type: "small"
+        size_hint_x: .99
+        pos_hint: {"top": 1}
+
+        MDTopAppBarLeadingButtonContainer:
+            MDActionTopAppBarButton:
+                icon: "arrow-left"
+                on_release: root.manager.back()
+
+        MDTopAppBarTitle:
+            text: "List All Messages from Teachers"
+
+    MDScrollView:
+        pos_hint: {'top': 0.9}
+        size_hint_y: None
+        height: root.height - (appbar.height * 2.5)
+        MDList:
+            pos_hint: {'center_x': 0.5,'top': 0.9}
+            spacing: dp(5)
+            id: teacher_accounts
+ 

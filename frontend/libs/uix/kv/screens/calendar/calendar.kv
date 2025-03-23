@@ -1,0 +1,105 @@
+
+<CalendarScreen>:
+    md_bg_color: app.theme_cls.backgroundColor
+
+    MDTopAppBar:
+        id: topbar
+        type: "small"
+        pos_hint: {'top': 1}
+
+        MDTopAppBarLeadingButtonContainer:
+
+            MDActionTopAppBarButton:
+                on_release: root.manager.back()
+                icon: "arrow-left"
+
+        MDTopAppBarTitle:
+            text: "Calendar"
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        pos_hint: {'center_x': 0.5,'top': 0.9}
+
+        MDBoxLayout:
+            orientation: 'vertical'
+            padding: dp(8)
+            size_hint_y: None
+            height: root.height / 2
+
+            MDBoxLayout:
+                size_hint_y: None
+                height: dp(48)
+                MDIconButton:
+                    on_release: root.previous_month()
+                    icon: "chevron-left"
+                    pos_hint: {'center_y': 0.5}
+                MDLabel:
+                    markup: True
+                    text: f"[b][color=#008080]{root.month_label}[/color][/b]"
+                    halign: 'center'
+                    valign: 'middle'
+                    pos_hint: {'center_y': 0.5}
+
+                MDIconButton:
+                    on_release: root.next_month()
+                    icon: "chevron-right"
+                    pos_hint: {'center_y': 0.5}
+
+            MDGridLayout:
+                id: calendar_grid
+                cols: 7
+                row_default_height: dp(40)
+                row_force_default: True
+                spacing: dp(1)
+                padding: dp(1)
+
+        MDBoxLayout:
+            id: activities
+            orientation: 'horizontal'
+            md_bg_color: "#F0F0F0"
+            spacing: dp(4)
+
+            MDBoxLayout:
+                id: daily_activities
+                orientation: 'vertical'
+                padding: dp(8)
+                # pos_hint: {'center_x': 0.5,'top': 1.0}
+                # size_hint_y: None
+                # height: activities.height
+
+                MDLabel:
+                    id: daily_label
+                    markup: True
+                    text: "[size=16sp][b][color=#F00080]Events for the day[/color][/b][/size]"
+                    halign: 'center'
+                    adaptive_height: True
+                # Dummy events for the selected day
+                MDScrollView:
+                    MDList:
+                        id: daily_events
+                        spacing: dp(2)
+
+
+            MDBoxLayout:
+                orientation: 'vertical'
+                padding: dp(8)
+
+                MDLabel:
+                    markup: True
+                    text: "[size=16sp][b][color=#F00080]Events for the Month[/color][/b][/size]"
+                    halign: 'center'
+                    adaptive_height: True
+                # Dummy events for the month
+                MDScrollView:
+                    MDList:
+                        id: monthly_events
+                        spacing: dp(2)
+
+    MDFabButton:
+        icon: "plus"
+        style: "small"
+        theme_icon_color: "Custom"
+        icon_color: "#008080"
+        md_bg_color: "red"
+        pos_hint: {'right': .9, 'top': 0.1}
+        on_release: root.add_event("")

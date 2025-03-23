@@ -1,0 +1,264 @@
+<AdminDashboard>
+    md_bg_color: app.theme_cls.backgroundColor
+
+    MDTopAppBar:
+        id: topbar
+        type: "small"
+        pos_hint: {'top': 1}
+
+        MDTopAppBarTitle:
+            text: "Administration Dashboard"
+
+        MDTopAppBarTrailingButtonContainer:
+
+            MDActionTopAppBarButton:
+                icon: "account-outline"
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        pos_hint: {'top': .92}
+        padding: 0, 0, 0, dp(150)
+        size_hint_: .8
+
+        MDBoxLayout:
+            orientation: 'vertical'
+            padding: 0, 0, 0, dp(70)
+            size_hint_y: None
+            size_hint_y: .08
+
+            MDBoxLayout:
+                orientation: 'horizontal'
+                spacing: dp(50)
+                size_hint_x: .9
+                pos_hint: {"center_x": .5, 'center_y': .9}
+
+                MyCard1:
+                    on_release: root.manager.push("applications")
+
+                MyCard2:
+                    on_release: root.manager.push("users")
+
+            MDBoxLayout:
+                orientation: 'horizontal'
+                size_hint_x: .9
+                pos_hint: {"center_x": .5}
+                spacing: dp(50)
+
+                MyCard3:
+                    on_release: root.manager.push("admin_chat")
+
+                MyCard4:
+                    on_release: root.manager.push("replying_teachers_messages")
+                    
+
+        MDBoxLayout:
+            orientation: 'vertical'
+            padding: 0, 0, 0, dp(60)
+            size_hint_y: None
+            adaptive_height: True
+
+            MDBoxLayout:
+                orientation: 'vertical'
+                pos_hint: {"center_x": .5, 'center_y': .45}
+                radius: dp(16)
+                size_hint: None, None
+                height: dp(270)
+                width: dp(320)
+
+                MDListItem:
+                    pos_hint: {"top": 1}
+                    radius: dp(16), dp(16), 0, 0
+                    theme_bg_color: "Custom"
+                    md_bg_color: (0, 180, 180, 0.5)
+                    on_release: root.manager.push("calendar")
+                    MDListItemLeadingIcon:
+                        icon: 'calendar-account-outline'
+                    MDListItemHeadlineText:
+                        markup: True
+                        text: "[size=13.5sp]Events[/size]"
+                    MDListItemTrailingIcon:
+                        icon: 'emoticon-happy-outline'
+                FitImage:
+                    source: "data/images/calender.png"
+
+    MDBoxLayout:
+        id: four
+        orientation: 'horizontal'
+        size_hint_x: .9
+        spacing: dp(5)
+        pos_hint: { 'center_x': .5,"bottom": 1}
+        adaptive_height: True
+
+        MDCard:
+            orientation: 'vertical'
+            pos_hint: {"top": 1}
+            radius: dp(8)
+            size_hint_y: None
+            height: dp(90)
+            # on_release: root.manager.push("camera")
+
+            MDIcon:
+                pos_hint: {"center_x": .5}
+                icon: 'account-outline'
+                theme_icon_color: "Custom"
+                icon_color: "#000080"
+
+            MDLabel:
+                pos_hint: {"center_x": .5}
+                markup: True
+                halign: 'center'
+                text: '[size=13.5sp]QR \nAttendance[/size]'
+
+        MDCard:
+            orientation: 'vertical'
+            # md_bg_color: app.my_shade_color
+            pos_hint: {"top": 1}
+            radius: dp(8)
+            size_hint_y: None
+            height: dp(90)
+            on_release: root.manager.push("teachers_presents")
+
+            MDIcon:
+                pos_hint: {"center_x": .5}
+                icon: 'wallet-outline'
+                theme_icon_color: "Custom"
+                icon_color: "#000080"
+
+            MDLabel:
+                pos_hint: {"center_x": .5}
+                markup: True
+                halign: 'center'
+                text: '[size=14sp]Teachers \nPresents[/size]'
+
+        MDCard:
+            orientation: 'vertical'
+            # md_bg_color: app.my_shade_color
+            pos_hint: {"top": 1}
+            radius: dp(8)
+            size_hint_y: None
+            height: dp(90)
+            on_release: root.manager.push("reset")
+
+
+            MDIcon:
+                pos_hint: {"center_x": .5}
+                icon: 'key-outline'
+                theme_icon_color: "Custom"
+                icon_color: "#000080"
+
+            MDLabel:
+                pos_hint: {"center_x": .5}
+                markup: True
+                halign: 'center'
+                text: '[size=14sp]Change \nPassword[/size]'
+
+        MDCard:
+            orientation: 'vertical'
+            pos_hint: {"top": 1}
+            radius: dp(8)
+            size_hint_y: None
+            height: dp(90)
+            on_release: root.logout()
+
+            MDIcon:
+                pos_hint: {"center_x": .5}
+                icon: 'power'
+                theme_icon_color: "Custom"
+                icon_color: "#000080"
+
+            MDLabel:
+                pos_hint: {"center_x": .5}
+                markup: True
+                halign: 'center'
+                text: '[size=14sp]Logout[/size]'
+
+<MyCard1@MDCard>:
+    orientation: 'horizontal'
+    theme_bg_color: "Custom"
+    md_bg_color: (0, 255, 0, 0.2)
+    radius: dp(16)
+    padding: dp(8)
+    size_hint: None, None
+    size: dp(145), dp(75)
+
+    MDLabel:
+        id: text
+        pos_hint: {"top": 1}
+        markup: True
+        text: '[size=16sp][b]Applications[/b][/size]'
+
+    MDIcon:
+        id: icon
+        pos_hint: {"center_y": .5}
+        icon: 'checkbox-marked-circle'
+        theme_font_size: "Custom"
+        font_size: sp(24)
+
+<MyCard2@MDCard>:
+    orientation: 'horizontal'
+    theme_bg_color: "Custom"
+    md_bg_color: (0, 255, 0, 0.2)
+    radius: dp(16)
+    padding: dp(8)
+    size_hint: None, None
+    size: dp(145), dp(75)
+
+    MDLabel:
+        id: text
+        pos_hint: {"top": 1}
+        markup: True
+        text: '[size=16sp][b]Accounts[/b][/size]'
+        # font_size: 7
+
+    MDIcon:
+        id: icon
+        pos_hint: {"center_y": .5}
+        icon: 'clipboard-list-outline'
+        theme_font_size: "Custom"
+        font_size: sp(24)
+
+<MyCard3@MDCard>:
+    orientation: 'horizontal'
+    theme_bg_color: "Custom"
+    md_bg_color: (0, 255, 0, 0.2)
+    radius: dp(16)
+    padding: dp(8)
+    size_hint: None, None
+    size: dp(145), dp(75)
+
+    MDLabel:
+        id: text
+        pos_hint: {"top": 1}
+        markup: True
+        text: '[size=16sp][b]Community \nChat[/b][/size]'
+
+    MDIcon:
+        id: icon
+        pos_hint: {"center_y": .5}
+        icon: 'facebook-messenger'
+        theme_font_size: "Custom"
+        font_size: sp(24)
+
+
+<MyCard4@MDCard>:
+    orientation: 'horizontal'
+    theme_bg_color: "Custom"
+    md_bg_color: (0, 255, 0, 0.2)
+    radius: dp(16)
+    padding: dp(8)
+    size_hint: None, None
+    size: dp(145), dp(75)
+
+    MDLabel:
+        id: text
+        pos_hint: {"top": 1}
+        markup: True
+        text: '[size=16sp][b]Messages[/b][/size]'
+
+    MDIcon:
+        id: icon
+        pos_hint: {"center_y": .5}
+        icon: 'chat-processing-outline'
+        theme_font_size: "Custom"
+        font_size: sp(24)
+        

@@ -1,0 +1,103 @@
+<ProfileUpdateScreen>
+    md_bg_color: app.theme_cls.backgroundColor
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        pos_hint: {'center_x': 0.5,'top': 1}
+        size_hint: .9, .9
+        radius: dp(5)
+        spacing: dp(5)
+        padding: 0,0,0,dp(50)
+
+        MDBoxLayout:
+            orientation: 'vertical'
+            spacing: 18
+            size_hint_x: .9
+            pos_hint: {'center_x': 0.5, "top": .9}
+            padding: 0, 0, 0, dp(20)
+           
+            MDTextField:
+                id:id_number
+                radius: dp(9)
+                allow_copy: True
+                on_text_validate: date_of_birth.focus = True
+
+
+                MDTextFieldHintText:
+                    text: " ID / Birth Entry Number"
+
+            MDTextField:
+                id:date_of_birth
+                radius: dp(9)
+                allow_copy: True
+                on_text_validate: number_of_passed_subjects.focus = True
+
+
+                MDTextFieldHintText:
+                    text: "Date of birth ( yyyy-mm-dd )"
+
+            MDTextField:
+                id:number_of_passed_subjects
+                radius: dp(9)
+                allow_copy: True
+                on_text_validate: gender.focus = True
+
+
+                MDTextFieldHintText:
+                    text: "Number_of_Passed_Subjects"
+
+            MDTextField:
+                id: gender
+                radius: dp(9)
+                allow_copy: True
+                on_focus: if self.focus: root.gender_menu.open()
+                on_text_validate: previous_school.focus = True
+
+
+                MDTextFieldHintText:
+                    text: "Gender"
+
+            MDTextField:
+                id: previous_school
+                radius: dp(9)
+                allow_copy: True
+                on_text_validate: next_of_kin.focus = True
+
+
+                MDTextFieldHintText:
+                    text: "Previous_School"
+                    
+            MDTextField:
+                id: next_of_kin
+                radius: dp(9)
+                allow_copy: True
+                on_text_validate: level.focus = True
+
+
+                MDTextFieldHintText:
+                    text: " Next_Of_Kin"
+
+            MDTextField:
+                id: level
+                radius: dp(9)
+                allow_copy: True
+                on_focus: if self.focus: root.level_menu.open()
+                on_text_validate: root.updates_user(id_number=id_number.text, date_of_birth=date_of_birth.text, number_of_passed_subjects=number_of_passed_subjects.text, gender=gender.text, previous_school=previous_school.text, next_of_kin=next_of_kin.text, current_academic_level=level.text )
+
+
+                MDTextFieldHintText:
+                    text: "A / O Level?"
+
+            MDButton:
+                id: bu
+                on_release: root.updates_user(id_number=id_number.text, date_of_birth=date_of_birth.text, number_of_passed_subjects=number_of_passed_subjects.text, gender=gender.text, previous_school=previous_school.text, next_of_kin=next_of_kin.text, current_academic_level=level.text )
+                # on_release: root.manager.push("student_dashboard")
+                pos_hint: {'center_x': 0.5}
+                radius: dp(2)
+                focus: False
+
+                MDButtonText:
+                    text: "Approve"
+                
+                MDButtonIcon:
+                    icon: 'cloud-check-variant-outline'

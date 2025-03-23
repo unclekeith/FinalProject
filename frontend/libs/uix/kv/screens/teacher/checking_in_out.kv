@@ -1,0 +1,82 @@
+<CheckingScreen>:
+    md_bg_color:"black"
+    name: "checking_screen"
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        pos_hint: {"center_x": .5, "top": 1}
+        size_hint: None,None
+        size_hint_x: .99
+        size_hint_y: .54
+        padding: dp(0)
+        
+
+        FitImage:
+            size_hint_x: None
+            width: root.width
+            # height: 200
+            source: "data/images/tower.png"
+
+    MDCard:
+        orientation: 'horizontal'
+        padding: dp(20), dp(10), dp(0), dp(10)
+        size_hint_y: None
+        height: dp(60)
+        pos_hint: {"center_x": .5, "center_y": 0.4}
+
+        MDLabel:
+            text: 'STATUS'
+        
+        MDBoxLayout:
+            orientation: 'horizontal'
+            padding: dp(0), dp(10), dp(30), dp(10)
+            adaptive_height: True
+
+            MDLabel:
+                id: label1
+                text: "- - - -"
+
+            MDIcon:
+                id: icon
+                icon: 'close-circle'
+                theme_font_size: "Custom"
+                font_size: sp(24)
+                theme_text_color: "Custom"
+                text_color: "red"
+
+    BoxLayout:
+        orientation: "horizontal"
+        pos_hint: {"bottom": 1}
+
+        # Add buttons for check-in and check-out actions
+        BoxLayout:
+            size_hint_y: None
+            height: dp(50)
+            padding: dp(20)
+
+            MDButton:
+                radius: dp(8)
+                on_release: root.check_in()
+                pos_hint: {"left": 1}
+
+                MDButtonText:
+                    text: 'Check-In'
+
+                MDButtonIcon:
+                    icon: "account-check-outline"
+
+        BoxLayout:
+            pos_hint: {"right": 1}
+            size_hint_y: None
+            height: dp(50)
+            padding: dp(20)
+
+            MDButton:
+                radius: dp(8)
+                on_release: root.check_out()
+
+                MDButtonText:
+                    text: "Check-Out"
+
+                MDButtonIcon:
+                    icon: "account-remove-outline"

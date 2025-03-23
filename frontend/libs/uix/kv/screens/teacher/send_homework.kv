@@ -1,0 +1,55 @@
+<SendHomework>:
+    md_bg_color: app.theme_cls.backgroundColor
+
+
+    MDTopAppBar:
+        type: "small"
+        size_hint_x: .99
+        pos_hint: {"top": 1}
+
+        MDTopAppBarLeadingButtonContainer:
+
+            MDActionTopAppBarButton:
+                icon: "arrow-left"
+                on_release: root.manager.back()
+
+
+       
+    MDCard:
+        id: image_container
+        orientation: 'vertical'
+        padding: dp(20), dp(10), dp(0), dp(10)
+        size_hint_y: None
+        height: dp(200)
+        radius: dp(0)
+        pos_hint: {"center_x": .5, "center_y": .6}
+
+    MDBoxLayout:
+        orientation: 'horizontal'
+        size_hint_y: .3
+        padding: dp(30), dp(40), dp(50), 0
+        spacing: dp(40)
+        pos_hint: {"center_x": .5, "center_y": .2}
+
+        MDButton:
+            on_release: root.file_manager_open()
+            pos_hint: {'center_x': 0.3, 'top': 1}
+            radius: dp(5)
+            MDButtonText:
+                text: "Open Manager"
+
+                MDButtonIcon:
+                    icon: 'chevron-double-right'
+                   
+        MDButton:
+            id: send
+            on_release: root.send_file()  # Calls the send_file method
+            pos_hint: {'center_x': 0.7, 'top': 1}
+            radius: dp(5)
+
+            MDButtonText:
+                text: "Send File"
+
+            MDButtonIcon:
+                icon: 'chevron-double-right'
+               

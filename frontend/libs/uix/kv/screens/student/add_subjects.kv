@@ -1,0 +1,37 @@
+<AddSubjectsScreen>
+    md_bg_color: app.theme_cls.backgroundColor
+
+    MDTopAppBar:
+        id: appbar
+        pos_hint: {"top": 1}
+        MDTopAppBarLeadingButtonContainer:
+
+            MDActionTopAppBarButton:
+                icon: "arrow-left"
+                on_release: root.manager.push_replacement("student_dashboard")
+
+            MDListItemLeadingAvatar:
+                source: "data/images/tower.png"
+                pos_hint: {"center_y": .5}
+                
+            MDTopAppBarTitle:
+                text: "Add Subjects"
+
+    MDScrollView:
+        pos_hint: {'top': 0.9}
+        size_hint_y: None
+        height: root.height - (appbar.height * 2.5)
+        MDList:
+            # pos_hint: {'center_x': 0.5,'top': 0.9}
+            id: subjects
+
+    MDButton:
+        id: add_subjects
+        pos_hint: {'center_x': 0.5,'top': 0.1}
+        on_release: root.get_subjects_with_symbols()
+        radius: dp(0)
+
+        MDButtonText:
+            text: "Create"
+
+    

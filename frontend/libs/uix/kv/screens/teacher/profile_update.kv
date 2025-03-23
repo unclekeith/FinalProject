@@ -1,0 +1,83 @@
+<ProfileUpdateScreen>
+    md_bg_color: app.theme_cls.backgroundColor
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        pos_hint: {'center_x': 0.5,'top': 1}
+        size_hint: .9, .9
+        radius: dp(5)
+        spacing: dp(5)
+        padding: 0,0,0,dp(50)
+
+        MDBoxLayout:
+            orientation: 'vertical'
+            spacing: 18
+            size_hint_x: .9
+            pos_hint: {'center_x': 0.5, "top": 1}
+            padding: 0, 0, 0, dp(50)
+           
+            MDTextField:
+                id:Teaching_subject
+                radius: dp(9)
+                allow_copy: True
+                on_text_validate: ID_number.focus = True
+
+
+                MDTextFieldHintText:
+                    text: " Teaching_subject"
+
+            
+            MDTextField:
+                id: ID_number
+                radius: dp(9)
+                allow_copy: True
+                on_text_validate: Gender.focus = True
+
+
+                MDTextFieldHintText:
+                    text: " ID_number"
+
+            MDTextField:
+                id: Gender
+                radius: dp(9)
+                allow_copy: True
+                on_focus: root.on_gender_focus(self, self.focus)
+                on_text_validate: next_of_kin.focus = True
+
+
+                MDTextFieldHintText:
+                    text: "Gender"
+                    
+            MDTextField:
+                id: next_of_kin
+                radius: dp(9)
+                allow_copy: True
+                on_text_validate: level.focus = True
+
+
+                MDTextFieldHintText:
+                    text: " Next_Of_Kin"
+
+            MDTextField:
+                id: level
+                radius: dp(9)
+                allow_copy: True
+                on_focus: root.on_level_focus(self, self.focus)
+                on_text_validate: bu.focus= True
+
+                MDTextFieldHintText:
+                    text: "Current academiclevel"
+
+            MDButton:
+                id: bu
+                on_release: root.updates_user(teaching_subject=Teaching_subject.text, teacher_id_number=ID_number.text, teacher_gender=Gender.text, teacher_next_of_kin=next_of_kin.text, teacher_current_academic_level=level.text )
+                # on_release: root.manager.push("student_dashboard")
+                pos_hint: {'center_x': 0.5}
+                radius: dp(2)
+                focus: False
+
+                MDButtonText:
+                    text: "Approve"
+                
+                MDButtonIcon:
+                    icon: 'cloud-check-variant-outline'

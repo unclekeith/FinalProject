@@ -1,0 +1,80 @@
+{
+    "subjects": [
+      {
+        "name": "MATHS",
+        "grade": "X"
+      },
+      {
+        "name": "ENGLISH",
+        "grade": "X"
+      },
+      {
+        "name": "HISTORY",
+        "grade": "X"
+      },
+      {
+        "name": "ACCOUNTS",
+        "grade": "X"
+      },
+      {
+        "name": "COMMERCE",
+        "grade": "X"
+      },
+      {
+        "name": "COMPUTER_SCIENCE",
+        "grade": "X"
+      },
+      {
+        "name": "GEOGRAPHY",
+        "grade": "X"
+      },
+      {
+        "name": "WOOD_WORK",
+        "grade": "X"
+      },
+      {
+        "name": "BIOLOGY",
+        "grade": "X"
+      },
+      {
+        "name": "NDEBELE",
+        "grade": "X"
+      },
+      {
+        "name": "SHONA",
+        "grade": "X"
+      },
+      {
+        "name": "ECONOMICS",
+        "grade": "X"
+      },
+      {
+        "name": "BUSINESS_STUDIES",
+        "grade": "X"
+      },
+      {
+        "name": "AGRICULTURE",
+        "grade": "X"
+      },
+      {
+        "name": "COMBINED_SCIENCE",
+        "grade": "X"
+      },
+      {
+        "name": "CHEMISTRY",
+        "grade": "X"
+      },
+      {
+        "name": "PE",
+        "grade": "X"
+      },
+      {
+        "name": "PHYSICS",
+        "grade": "X"
+      },
+      {
+        "name": "HERITAGE",
+        "grade": "X"
+      }
+    ]
+  }

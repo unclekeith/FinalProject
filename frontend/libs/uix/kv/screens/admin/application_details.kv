@@ -1,0 +1,56 @@
+<ApplicationDetailsScreen>:
+    md_bg_color: app.theme_cls.backgroundColor
+    
+
+    MDTopAppBar:
+        id: appbar
+        type: "small"
+        pos_hint: {'top': 1}
+        
+        MDTopAppBarLeadingButtonContainer:
+            MDActionTopAppBarButton:
+                on_release: root.manager.back()
+                icon: "arrow-left"
+        
+        MDTopAppBarTitle:
+            text: "Application Details"
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        padding: dp(20)
+        spacing: dp(10)
+
+        MDLabel:
+            id: applicant_name_label
+            text: "Applicant: "
+
+        MDScrollView:
+            pos_hint: {'top': 0.9}
+            size_hint_y: None
+            height: root.height - (appbar.height * 2.5)
+            MDList:
+                pos_hint: {'center_x': 0.5,'top': 0.9}
+                spacing: dp(5)
+                id: subjects
+
+
+    MDBoxLayout:
+        orientation: 'horizontal'
+        spacing: dp(40)
+        pos_hint: {'center_x': 0.5,'center_y': 0.1}
+        size_hint_y: None
+        height: approve_button.height
+        padding: dp(80), 0,0,0
+
+        MDButton:
+            id: approve_button
+            on_release: root.approve_application()
+            radius: dp(0)
+            MDButtonText:
+                text: "Approve"
+
+        MDButton:
+            on_release: root.reject_application()
+            radius: dp(0)
+            MDButtonText:
+                text: "Reject"
